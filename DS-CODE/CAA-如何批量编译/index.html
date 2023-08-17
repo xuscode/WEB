@@ -3559,13 +3559,16 @@ V6R2021x_B423<span class="w"> </span>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">cmd自动编译</label><label for="__tabbed_1_2">提交修改的代码之仓库备份</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">echo</span> off
+<div class="highlight"><pre><span></span><code><span class="k">title</span> BUILD-CAA
+<span class="p">@</span><span class="k">echo</span> off
 <span class="k">cd</span> /d <span class="nv">%~dp0</span>
-<span class="k">CALL</span> ipconfig
-<span class="k">CALL</span> <span class="s2">"C:\Program Files\Dassault Systemes\B27\win_b64\code\command\tck_init.bat"</span>
+<span class="p">@</span><span class="c1">REM CALL ipconfig</span>
+<span class="p">@</span><span class="k">echo</span> ==============================================================
+<span class="k">CALL</span> <span class="s2">"C:\Program Files\Dassault Systemes\T27\win_b64\code\command\tck_init.bat"</span>
+<span class="k">CALL</span> tck_list
+<span class="k">CALL</span> Tck_list V5_6R2017_B27 -all
 <span class="k">CALL</span> tck_profile V5_6R2017_B27
-<span class="k">CALL</span> mkmk  -a -g -u  -brief 
-<span class="k">CALL</span> mkrtv
+<span class="k">CALL</span> mkmk  -a -g -u  -brief <span class="p">&amp;&amp;</span> mkrtv
 </code></pre></div>
 </div>
 <div class="tabbed-block">
